@@ -8,6 +8,7 @@
 //
 
 using System;
+using System.IO;
 using System.Runtime.InteropServices;
 
 namespace OpenTK.Audio.OpenAL
@@ -46,7 +47,7 @@ namespace OpenTK.Audio.OpenAL
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Create("ANDROID")))
+                if (File.Exists("/system/build.prop"))
                 {
                     return Android;
                 }
